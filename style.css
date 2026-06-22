@@ -1,0 +1,341 @@
+/* ===========================================================
+   CANZLER DIGITAL — Stylesheet
+   Token-System:
+   Farbe:  Papier #FAF8F4 · Tinte #1C2526 · Petrol #3D5A52 · Leder #8B7355
+   Typo:   Source Serif 4 (Marke/Überschriften) · Inter (Fließtext)
+   Signatur: das gerahmte Siegel-Lockup (Name + Claim als feste Einheit)
+   =========================================================== */
+
+:root {
+  --paper: #faf8f4;
+  --sand: #efe9dd;
+  --ink: #1c2526;
+  --ink-soft: #4a5354;
+  --petrol: #3d5a52;
+  --leather: #8b7355;
+  --line: rgba(28, 37, 38, 0.16);
+  --line-soft: rgba(28, 37, 38, 0.09);
+
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  --max-width: 760px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--petrol);
+  outline-offset: 3px;
+}
+
+/* ===== SIGNATURE: das Siegel-Lockup ===== */
+.lockup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1.5px solid var(--ink);
+  padding: 10px 22px;
+  flex-shrink: 0;
+}
+.lockup-name {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.lockup-rule {
+  width: 100%;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.4;
+  margin: 6px 0;
+}
+.lockup-claim {
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: var(--petrol);
+  white-space: nowrap;
+}
+.lockup-small {
+  padding: 6px 14px;
+}
+.lockup-small .lockup-name { font-size: 14px; }
+.lockup-small .lockup-claim { font-size: 8px; }
+
+/* ===== HEADER ===== */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.menu-toggle {
+  display: none;
+  width: 28px;
+  height: 22px;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.menu-toggle span {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  background: var(--ink);
+}
+.menu-toggle span:nth-child(2) { width: 70%; }
+
+.primary-nav {
+  display: flex;
+  gap: 32px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+.primary-nav a:hover { color: var(--ink); }
+
+/* ===== MAIN SECTIONS — shared rhythm ===== */
+main > section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 56px 24px;
+  border-bottom: 1px solid var(--line-soft);
+}
+main > section:last-child { border-bottom: none; }
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--leather);
+  margin: 0 0 28px;
+}
+
+/* ===== HERO ===== */
+.hero { padding-top: 64px; padding-bottom: 60px; }
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--leather);
+  margin: 0 0 22px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.22;
+  max-width: 480px;
+  margin: 0 0 20px;
+  color: var(--ink);
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--petrol);
+}
+.hero-lead {
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 420px;
+  margin: 0 0 30px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 14px 26px;
+  border: 1.5px solid var(--ink);
+  transition: background 0.15s, color 0.15s;
+}
+.btn-primary:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* ===== PROBLEM SZENEN ===== */
+.scenes .scene {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 18px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line-soft);
+}
+.scenes .scene:last-child { border-bottom: 1px solid var(--line-soft); }
+.scene-time {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ink-soft);
+  padding-top: 2px;
+}
+.scene p { margin: 0; font-size: 15px; }
+
+/* ===== OFFER / HOW — three-column pattern (no numbering, just rule) ===== */
+.offer-grid,
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.offer-item,
+.how-item {
+  border-top: 1.5px solid var(--ink);
+  padding-top: 16px;
+}
+.offer-item h3,
+.how-item h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 17px;
+  margin: 0 0 8px;
+}
+.offer-item p,
+.how-item p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ===== PRICING ===== */
+.pricing-card {
+  border: 1px solid var(--line);
+}
+.pricing-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 20px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.pricing-row:last-child { border-bottom: none; }
+.pricing-row span:first-child { color: var(--ink-soft); }
+.price {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--petrol);
+  white-space: nowrap;
+}
+.pricing-total {
+  background: var(--sand);
+  font-weight: 500;
+}
+.pricing-total .price { color: var(--ink); }
+.pricing-note {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 18px 0 0;
+  max-width: 480px;
+}
+
+/* ===== CONTACT ===== */
+.contact h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 26px;
+  margin: 0 0 14px;
+}
+.contact-lead {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  max-width: 440px;
+  margin: 0 0 26px;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 24px;
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-meta {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ===========================================================
+   MOBILE — reflow, not just shrink
+   =========================================================== */
+@media (max-width: 640px) {
+  .header-inner { padding: 16px 20px; }
+  .lockup { padding: 8px 16px; }
+  .lockup-name { font-size: 16px; }
+  .lockup-claim { font-size: 8px; }
+
+  .menu-toggle { display: flex; }
+
+  .primary-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+  .primary-nav.is-open { max-height: 220px; }
+  .primary-nav a {
+    padding: 16px 20px;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  main > section { padding: 40px 20px; }
+  .hero { padding-top: 40px; }
+
+  .offer-grid,
+  .how-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .pricing-row { font-size: 13.5px; padding: 14px 16px; }
+
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+}
