@@ -1,0 +1,9 @@
+# Ignore local archive and editor artifacts
+canzler-digital.zip
+
+# OS
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/

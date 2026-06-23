@@ -48,5 +48,18 @@ Das beworbene Angebot ("Erster Schritt Digital") ist eine bewusst sehr einfache 
 - [ ] Echte Kontakt-E-Mail-Adresse einsetzen (aktuell Platzhalter `hallo@canzler-digital.de`)
 - [ ] Ggf. Open-Graph-Meta-Tags für Vorschaubilder beim Teilen ergänzen
 
+## Deployment
+- Lokales Git-Repository ist bereits eingerichtet.
+- Erstellen Sie ein GitHub-Repository, z. B. `canzler-digital`, und verbinden Sie es mit dem lokalen Projekt:
+  ```bash
+git remote add origin https://github.com/<Ihr-Benutzername>/canzler-digital.git
+git push -u origin master
+```
+- Erstellen Sie ein neues Cloudflare Pages Projekt und verbinden Sie es mit dem GitHub-Repository.
+- Wählen Sie den Branch `master` oder `main` und setzen Sie das Build-Output-Verzeichnis auf `/`.
+- Da die Seite aus reinem HTML/CSS besteht, ist kein Build-Befehl nötig.
+- Die Seiten `impressum.html` und `datenschutz.html` sind bereits zum Repo hinzugefügt.
+- Wenn eine eigene Domain registriert wird, kann sie anschließend in Cloudflare Pages als benutzerdefinierte Domain aktiviert werden.
+
 ## Hinweis für die Weiterarbeit
 Der Eigentümer dieses Projekts ist nicht technisch versiert (kein Hosting-/Code-Hintergrund), aber klar in seinen Designentscheidungen — bitte Rückfragen stellen statt eigenständig vom Design-System abzuweichen, besonders beim Signatur-Lockup und der Farbpalette. Änderungswünsche kamen im bisherigen Prozess oft aus sehr genauem visuellem Hinsehen (z. B. Breitenverhältnis Logo/Claim, Mobile-Verhalten) — entsprechend sorgfältig prüfen, bevor Layoutänderungen vorgenommen werden.
