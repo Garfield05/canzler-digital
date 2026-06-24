@@ -380,14 +380,20 @@ main > section:last-child { border-bottom: none; }
   main > section { padding: 40px 20px; }
   .hero { padding-top: 40px; }
 
+  .work-frame {
+    padding: 0 10px;
+  }
   .work-card {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    max-width: 320px;
+    margin: 0 auto;
   }
   .work-icon {
     width: 72px;
     height: 72px;
+    margin-bottom: 14px;
   }
   .work-copy {
     width: 100%;
