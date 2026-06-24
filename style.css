@@ -380,6 +380,22 @@ main > section:last-child { border-bottom: none; }
   main > section { padding: 40px 20px; }
   .hero { padding-top: 40px; }
 
+  .work-card {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  .work-icon {
+    width: 72px;
+    height: 72px;
+  }
+  .work-copy {
+    width: 100%;
+  }
+  .work-label {
+    font-size: 20px;
+  }
+
   .offer-grid,
   .how-grid {
     grid-template-columns: 1fr;
