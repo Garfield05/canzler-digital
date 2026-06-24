@@ -171,6 +171,57 @@ main > section:last-child { border-bottom: none; }
   margin: 0 0 30px;
 }
 
+.work-in-progress {
+  padding: 0 24px 56px;
+}
+.work-frame {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+  box-shadow: 0 10px 24px rgba(28, 37, 38, 0.08);
+}
+.work-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid var(--ink);
+  background: linear-gradient(180deg, rgba(245, 243, 238, 0.9), rgba(250, 248, 244, 0.95));
+  padding: 28px 24px;
+  border-radius: 18px;
+}
+.work-icon {
+  flex-shrink: 0;
+  width: 88px;
+  height: 88px;
+  display: grid;
+  place-items: center;
+  background: rgba(61, 90, 82, 0.08);
+  border-radius: 22px;
+  overflow: hidden;
+}
+.work-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.work-copy {
+  min-width: 0;
+}
+.work-label {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+.work-text {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
